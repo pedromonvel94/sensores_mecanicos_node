@@ -3,7 +3,10 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 const path = require('path');
 
-dotenv.config();
+dotenv.config({ 
+    path: path.resolve(__dirname, '../../../.env'), 
+    override: true 
+});
 
 // Configuración de la conexión a Aiven MySQL
 const dbConfig = {
@@ -17,7 +20,7 @@ const dbConfig = {
 // Aiven requiere conexión SSL
 // Verificamos si el certificado está configurado en el .env
 if (process.env.DB_SSL_CA) {
-    const certPath = path.resolve(__dirname, '../../', process.env.DB_SSL_CA);
+    const certPath = path.resolve(__dirname, '../../../', process.env.DB_SSL_CA);
     try {
         if (fs.existsSync(certPath)) {
             dbConfig.ssl = {
@@ -44,6 +47,7 @@ pool.getConnection()
     })
     .catch(err => {
         console.error('Error al conectar a la base de datos:', err.message);
+        console.error('Detalle del error:', err);
         console.error('Verifica tus credenciales en el archivo .env y el certificado ca.pem.');
     });
 

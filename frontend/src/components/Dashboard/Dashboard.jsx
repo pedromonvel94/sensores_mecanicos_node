@@ -37,9 +37,12 @@ const Dashboard = () => {
         fetchSensores();
     }, [tipoFiltro]);
 
-    // Calcular estadísticas
+    // Calcular estadísticas y títulos dinámicos
     const totalSensores = sensores.length;
     const tiposUnicos = [...new Set(sensores.map((s) => s.tipo))].length;
+    const tituloGrafico = tipoFiltro
+        ? `Valores de Sensores: ${tipoFiltro.charAt(0).toUpperCase() + tipoFiltro.slice(1)}`
+        : 'Distribución por Tipo de Sensor';
 
     return (
         <div className="dashboard">
@@ -71,7 +74,7 @@ const Dashboard = () => {
 
                     {/* Gráfico de barras */}
                     <div className="card">
-                        <h2 className="card-title">Distribución por tipo</h2>
+                        <h2 className="card-title">{tituloGrafico}</h2>
                         <SensorChart sensores={sensores} />
                     </div>
 

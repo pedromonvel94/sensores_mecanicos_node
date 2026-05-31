@@ -2,10 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
+const path = require('path');
 const sensorRoutes = require('./routes/sensorRoutes');
 
-// Cargar variables de entorno
-dotenv.config();
+// Cargar variables de entorno desde la raíz del proyecto
+dotenv.config({ 
+    path: path.resolve(__dirname, '../../.env'), 
+    override: true 
+});
 
 const app = express();
 const PORT = process.env.PORT || 3000;
