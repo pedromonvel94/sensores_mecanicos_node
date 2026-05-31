@@ -1,0 +1,71 @@
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+.sensor-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.sensor-table thead {
+    background-color: var(--color-surface-hover);
+}
+
+.sensor-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.sensor-table td {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.sensor-table tbody tr {
+    transition: var(--transition);
+}
+
+.sensor-table tbody tr:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.tipo-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.tipo-badge.temperatura {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: var(--color-accent-temp);
+}
+
+.tipo-badge.presion {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--color-accent-presion);
+}
+
+.tipo-badge.vibracion {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: var(--color-accent-vibracion);
+}
+
+.empty-message {
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}

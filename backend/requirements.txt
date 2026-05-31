@@ -1,0 +1,12 @@
+# Este es un proyecto de Node.js, por lo que las dependencias reales
+# se manejan en el archivo package.json usando npm.
+# Sin embargo, a petición, aquí están las dependencias principales requeridas:
+
+express
+mysql2
+dotenv
+cors
+helmet
+
+# Para desarrollo:
+nodemon
