@@ -1,0 +1,28 @@
+# =========================================================================
+# REQUISITOS GENERALES DEL PROYECTO (BACKEND Y FRONTEND)
+# =========================================================================
+# Nota académica: Al tratarse de un proyecto Node.js, las dependencias
+# reales son instaladas vía npm en sus respectivas carpetas.
+# Este archivo unifica y lista los requerimientos principales del proyecto.
+
+# --- DEPENDENCIAS DEL BACKEND (API REST) ---
+express
+mysql2
+dotenv
+cors
+helmet
+
+# Herramientas de Desarrollo (Backend):
+nodemon
+
+# --- DEPENDENCIAS DEL FRONTEND (REACT WEB APP) ---
+react
+react-dom
+axios
+chart.js
+react-chartjs-2
+
+# Herramientas de Desarrollo (Frontend):
+vite
+@vitejs/plugin-react
+eslint
